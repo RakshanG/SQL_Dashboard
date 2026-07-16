@@ -1,0 +1,8 @@
+SELECT
+Reporting_Airline,
+ROUND(AVG(CAST(ArrDelayMinutes AS DOUBLE)),1 ) AS avg_delay_minutes,
+COUNT(*) AS total_flights 
+FROM workspace.default.flights
+GROUP BY Reporting_Airline
+ORDER BY avg_delay_minutes DESC 
+
